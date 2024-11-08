@@ -1,202 +1,199 @@
-@import './fonts';
-@import './normalize';
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .wrapper {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 20px auto;
+    padding: 20px;
 
     .header {
-        max-width: 1240px;
         display: flex;
-        justify-content: space-between; 
+        justify-content: space-between;
         align-items: center;
-        gap: 20px;
         padding: 60px 10px;
+
+        .text-content {
+            max-width: 560px;
+        }
 
         .heading {
             font-weight: 600;
             font-family: 'Exo 2', sans-serif;
-            font-size: 52px; 
+            font-size: 52px;
             line-height: 65px;
+
+            @media (max-width: 992px) {
+                font-size: 48px;
+                line-height: 58px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 40px;
+                line-height: 50px;
+                text-align: center;
+            }
+
+            @media (max-width: 576px) {
+                font-size: 32px;
+                line-height: 40px;
+            }
         }
-        
+
         .description {
             margin-top: 20px;
             color: #6B6B6C;
             font-family: "PT sans", sans-serif;
-            width: 560px;
             font-weight: 400;
             font-size: 16px;
             line-height: 24px;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+                width: 100%;
+                text-align: center;
+            }
         }
 
-    }
-}
+        .image-container {
+            .image-large {
+                max-width: 635px;
+                width: 100%;
+                height: auto;
+            }
+        }
 
-.link-wrapper {
-    font-family: "PT sans", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    display: inline-flex;
-    flex-direction: column;
-    gap: 8px; 
-    margin-top: 20px;
-    cursor: pointer;
+        /* Kichik ekranlarda rasm matn ostiga tushadi */
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
 
-    a {
-        color: #232222;
-        text-decoration: none;
-        transition: all 0.6s ease;
-    }
-
-    a:hover {
-        color: #1b1b9c;
-    } 
-}
-
-.image-container {
-    .image-large {
-        max-width: 635px;
-        max-height: 505px;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.card {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 70px;
-    align-items: stretch; 
-    padding: 30px ;
-    max-width: 1230px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    -webkit-box-shadow: 5px 5px 42px 22px rgba(235,235,235,1);
-    -moz-box-shadow: 5px 5px 42px 22px rgba(235,235,235,1);
-    box-shadow: 5px 5px 42px 22px rgba(235,235,235,1);
-}   
-
-.card > div {
-    flex-grow: 1;
-}
-
-@mixin card-content {
-    max-width: 250px;
-    max-height: 245px;
-    line-height: 20px;
-    margin: 0 auto;
-    padding-inline: 20px;
-    
-    .title, .subtitle {
-        font-weight: 600;
-        font-family: 'Exo 2', sans-serif;
-        font-size: 20px;
-        line-height: 27px;
-        width: 258px;
-        margin-bottom: 20px;
+            .image-container {
+                margin-top: 20px;
+            }
+        }
     }
 
-    .text, .detail {
-        font-family: 'PT Sans', sans-serif;
-        width: 225px;
-        line-height: 20px;
-        margin-bottom: 20px;
+    .card {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        margin-bottom: 70px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 5px 5px 42px 22px rgba(235, 235, 235, 1);
+
+        >div {
+            flex-grow: 1;
+        }
+
+        .section-a,
+        .section-b,
+        .section-c {
+            max-width: 250px;
+            line-height: 20px;
+            margin: 0 auto;
+            padding-inline: 20px;
+        }
+
+        .separator {
+            max-width: 1px;
+            background-color: #D7D7DD;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        @media (max-width: 576px) {
+            padding: 15px;
+        }
     }
-}
 
-.separator {
-    max-width: 1px;
-    background-color: #D7D7DD;
-}
+    .images-1 {
+        img {
+            width: 100%;
+            max-width: 1225px;
+            height: auto;
 
-@mixin icon-style {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #E9E9EC;
-    border-radius: 50%; 
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
-}
+            @media (max-width: 768px) {
+                margin-top: 20px;
+            }
+        }
+    }
 
-.icon-text-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-family: Arial, sans-serif;
-    margin-top: 80px;
-    margin-bottom: 20px;
-}
+    .gcc {
+        display: flex;
+        gap: 280px;
+        padding: 0 60px;
 
-.gcc h2{
-    margin-bottom: 10px;
-}
+        .carts,
+        .carts-2 {
+            .icon-text-card {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 20px;
 
-.icon-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #E9E9EC;
-    border-radius: 50%; 
-    width: 50px;
-    height: 50px;
-}
+                .icon-circle {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #E9E9EC;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
 
-.icon-circle img {
-    width: 24px;
-    height: 24px;
-}
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
 
-.text-content {
-    color: #333;
-}
+                .text-content {
+                    color: #333;
 
-.title {
-    font-weight: 600;
-    font-size: 16px;
-    color: #333;
-    margin: 0;
-}
+                    .title {
+                        font-weight: 600;
+                        font-size: 16px;
+                        color: #333;
+                        margin: 0;
+                    }
 
-.description {
-    font-size: 14px;
-    color: #6B6B6C;
-    margin: 0;
-    width: 295px;
-}
+                    .description {
+                        font-size: 14px;
+                        color: #6B6B6C;
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
 
-.gcc{
-    display: flex;
-    padding: 0 60px;
-    gap: 280px;
-}
+        @media (max-width: 992px) {
+            gap: 100px;
+            padding: 0 40px;
+        }
 
-.section-a {
-    @include card-content;
-}
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 20px;
 
-.section-b {
-    @include card-content;
-}
+            .carts,
+            .carts-2 {
+                .icon-text-card {
+                    flex-direction: column;
+                    text-align: center;
 
-.section-c {
-    @include card-content;
-}
-
-.icon-a, .icon-b, .icon-c {
-    @include icon-style;
-}
-
-.icon-a img, .icon-b img, .icon-c img {
-    height: 40px; 
+                    .icon-circle {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
 }
